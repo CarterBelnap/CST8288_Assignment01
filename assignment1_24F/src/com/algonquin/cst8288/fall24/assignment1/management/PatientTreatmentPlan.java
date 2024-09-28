@@ -11,10 +11,7 @@ public class PatientTreatmentPlan {
 	 * 
 	 * @param patient
 	 */
-	public void createTreatmentPlan(Patient patient){
-		TreatmentPlan treatment = new SurgeryTreatmentPlan();
-		PatientAgeCalculation patientAge = new PatientAgeCalculation();
-		PatientLifeStage patientLifeStage = new PatientLifeStage();
+	public void createTreatmentPlan(Patient patient, TreatmentPlan treatment, PatientAgeCalculation patientAge, PatientLifeStage patientLifeStage) {
 		patient.setAge(patientAge.calulatePatientAge(patient.getDateOfBirth()));
 		patient.setLifeStage(patientLifeStage.determineLifeStage(patient.getAge()));
 		treatment.createTreatmentPlan(patient);

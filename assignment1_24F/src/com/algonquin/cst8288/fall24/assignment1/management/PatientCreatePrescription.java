@@ -17,8 +17,7 @@ public class PatientCreatePrescription {
 	 * @param filename
 	 * @throws IOException
 	 */
-	public void generatePrescription(Patient patient, String filename) throws IOException {
-		PrescriptionService prescriptionService = new OnlinePrescriptionService();
+	public void generatePrescription(Patient patient, String filename, PrescriptionService prescriptionService) throws IOException {
 		BufferedWriter bwriter;
 		bwriter = new BufferedWriter(new FileWriter(filename));	
 		bwriter.write(prescriptionService.generatePrescription(patient));
