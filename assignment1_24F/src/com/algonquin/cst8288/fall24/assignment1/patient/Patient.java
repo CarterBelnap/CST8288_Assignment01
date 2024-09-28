@@ -104,9 +104,6 @@ public abstract class Patient {
 	public void setPlannedTreatment(String plannedTreatment) {
 		this.plannedTreatment = plannedTreatment;
 	}
-
-	public abstract void admit();
-
     
 }
 

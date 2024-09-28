@@ -13,11 +13,6 @@ public class Outpatient extends Patient {
     public String getAppointmentDate() {
         return appointmentDate;
     }
-
-	@Override
-	public void admit() {
-		 throw new UnsupportedOperationException("Unexpcted error occurred");	
-	}
       
 }
 
