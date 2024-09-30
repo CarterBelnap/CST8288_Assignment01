@@ -10,9 +10,17 @@ There are seven main files to focus on;
 6. PatientManagement.java: The controller class of the application.
 7. Physician: The main program to execute the application
 
-Part I: Breaking down PatientManagement.java (the controller) to appeal to the Single Responsibility Principle, separating it into five seperate files dealing with validation,
+Part I: Breaking down PatientManagement.java (the controller) to appeal to the Single Responsibility Principle, separating it into five separate files dealing with validation,
 age calculation, determining life stage, creating prescriptions, and creating treatment plans.
 
-Part II: Refactored InPatient.java/OutPatient.java/Patient.Java to adhere to Liskov Substitution Principle, specifically the admit() method. 
+Part II: Refactored InPatient.java/OutPatient.java/Patient.Java to adhere to the Liskov Substitution Principle, specifically the admit() method. 
 
-Part III: 
+Part III: Refactored PatientManagement.java to follow Dependancy Inversion Principle.
+
+Part IV: Created MedicationTreatmentPlan.java and SurgeryTreatmentPlan.java, which both implement TreatmentPlan.java and get their necessary variables depending on whether the patient needs surgery or medication. Specifically following the business rules provided.
+
+Part V: Implemented OnlinePrescriptionService.java and PrintablePrescriptionService.java to print out data regarding each patient. I used a StringBuilder to achieve this.
+
+Part VI: Implemented Physician.java which serves as the main file, using two patients and their data, John Doe and Jane Smith. Create the files stated in part V.
+
+Also created two JUnit files, named SurgeryJUnitTests.java and TreatmentJUnitTests.java. Which both test the data stated in the business rules given.
