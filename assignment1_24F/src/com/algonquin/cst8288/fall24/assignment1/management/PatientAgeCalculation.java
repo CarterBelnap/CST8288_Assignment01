@@ -12,7 +12,7 @@ public class PatientAgeCalculation {
 	 * @param dob
 	 * @return
 	 */
-	public long calulatePatientAge(String dob) {
+	public long calculatePatientAge(String dob) {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate dateOfBirth = LocalDate.parse(dob, formatter);
 		

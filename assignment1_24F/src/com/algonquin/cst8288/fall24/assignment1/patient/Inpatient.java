@@ -1,5 +1,12 @@
 package com.algonquin.cst8288.fall24.assignment1.patient;
 
+
+/**
+ * 
+ * Inpatient class that holds all patient data extended from Patient, while also including Room number
+ * 
+ */
+
 public class Inpatient extends Patient {
     private String roomNumber;
 

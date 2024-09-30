@@ -1,0 +1,10 @@
+--Patient Data--
+Patient Name: John Doe
+Date of Birth: 1987-10-17
+Diagnose: Acute
+Next App.:2024-12-05
+Details:
+The patient is diagnosed with Acute and requires surgery.
+The patient is 36 years old with a risk factor of Low.
+Fasting instructions: Fasting 8 Hours Before.
+Follow-up schedule: In a Month.

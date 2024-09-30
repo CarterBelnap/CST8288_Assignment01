@@ -1,5 +1,12 @@
 package com.algonquin.cst8288.fall24.assignment1.patient;
 
+
+/**
+ * 
+ * Outpatient class that holds all patient data plus appointment dates
+ * 
+ */
+
 public class Outpatient extends Patient {
 	
     private String appointmentDate;
