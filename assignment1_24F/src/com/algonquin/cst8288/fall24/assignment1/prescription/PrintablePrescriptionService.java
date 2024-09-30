@@ -14,7 +14,9 @@ public class PrintablePrescriptionService implements PrescriptionService {
     @Override
     public String generatePrescription(Patient patient) {
         StringBuilder txtPrescription = new StringBuilder();
-
+        MedicationTreatmentPlan medicationTreatmentPlan = new MedicationTreatmentPlan();
+        SurgeryTreatmentPlan surgeryTreatmentPlan = new SurgeryTreatmentPlan();
+        
         txtPrescription.append("--Patient Data--\n")
                        .append("Patient Name: ").append(patient.getName()).append("\n")
                        .append("Date of Birth: ").append(patient.getDateOfBirth()).append("\n")
@@ -22,17 +24,15 @@ public class PrintablePrescriptionService implements PrescriptionService {
 
         if (patient instanceof Inpatient) {
             Inpatient inPatient = (Inpatient) patient;
-            txtPrescription.append("Rx:").append(inPatient.getRoomNumber()).append("\n");
+            txtPrescription.append("Rx: ").append(inPatient.admit()).append("\n");
+            txtPrescription.append(medicationTreatmentPlan.createTreatmentPlan(inPatient));
         }
         else if (patient instanceof Outpatient) {
             Outpatient OutPatient = (Outpatient) patient;
+            
             txtPrescription.append("Next App.:").append(OutPatient.getAppointmentDate()).append("\n");
+            txtPrescription.append(surgeryTreatmentPlan.createTreatmentPlan(OutPatient));
         }
-        
-        txtPrescription.append("Details:\n");
-        TreatmentPlan treatmentPlan = new SurgeryTreatmentPlan();
-        String treatmentPlanDetails = treatmentPlan.createTreatmentPlan(patient);
-        txtPrescription.append(treatmentPlanDetails).append("\n");
 
         return txtPrescription.toString();
     }

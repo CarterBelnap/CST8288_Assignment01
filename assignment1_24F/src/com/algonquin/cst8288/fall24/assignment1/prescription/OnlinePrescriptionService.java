@@ -14,8 +14,9 @@ public class OnlinePrescriptionService implements PrescriptionService {
     @Override
     public String generatePrescription(Patient patient) {
         StringBuilder htmlPrescription = new StringBuilder();
+        MedicationTreatmentPlan medicationTreatmentPlan = new MedicationTreatmentPlan();
+        SurgeryTreatmentPlan surgeryTreatmentPlan = new SurgeryTreatmentPlan();
 
-        // Start HTML document
         htmlPrescription.append("<html>\n")
                         .append("<body>\n")
                         .append("<h1>Patient Data</h1>\n")
@@ -25,14 +26,16 @@ public class OnlinePrescriptionService implements PrescriptionService {
 
         if (patient instanceof Inpatient) {
             Inpatient inPatient = (Inpatient) patient;
-            htmlPrescription.append("<p><strong>Rx: </strong>").append(inPatient.getRoomNumber()).append("</p>\n");
+            htmlPrescription.append("<p><strong>Rx: </strong>").append(inPatient.admit()).append("</p>\n");
+            htmlPrescription.append(medicationTreatmentPlan.createTreatmentPlan(inPatient));
         }
-        htmlPrescription.append("<p><strong>Details:</strong></p> \n");
-        TreatmentPlan treatmentPlan = new SurgeryTreatmentPlan(); // Instantiate appropriate treatment plan
-        String treatmentPlanDetails = treatmentPlan.createTreatmentPlan(patient);
-        htmlPrescription.append("<p>").append(treatmentPlanDetails).append("</p>\n");
+        else if (patient instanceof Outpatient) {
+            Outpatient OutPatient = (Outpatient) patient;
+            
+            htmlPrescription.append("<p><strong>Next App.: </strong>").append(OutPatient.getAppointmentDate()).append("</p>\n");
+            htmlPrescription.append(surgeryTreatmentPlan.createTreatmentPlan(OutPatient));
+        }
 
-        // End HTML document
         htmlPrescription.append("</body>\n")
                         .append("</html>");
 

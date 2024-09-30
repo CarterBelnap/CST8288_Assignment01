@@ -20,8 +20,8 @@ public class Inpatient extends Patient {
         return roomNumber;
     }
     
-	public void admit() {
-		System.out.println(getName() + " has been admitted to " + getRoomNumber());
-		
+	public String admit() {
+		return getName() + " has been admitted to " + getRoomNumber();
+
 	}
 }

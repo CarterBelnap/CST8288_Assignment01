@@ -2,9 +2,9 @@
 Patient Name: Jane Smith
 Date of Birth: 2009-05-22
 Diagnose: Infection
-Rx:B304
-Details:
-The patient is diagnosed with Infection and requires surgery.
-The patient is 15 years old with a risk factor of Medium.
-Fasting instructions: Fasting 2 Hours Before.
-Follow-up schedule: In a Week.
+Rx: Jane Smith has been admitted to B304
+Medication Treatment Plan:
+Patient Life Stage: Youth.
+Doses per day: 2.
+Duration: 14 days.
+Medication: Antibiotics.

@@ -23,14 +23,17 @@ public class MedicationTreatmentPlan implements TreatmentPlan {
         String medicationType = getMedicationType(conditionType);
         // Determine duration of treatment based on condition type
         int duration = getTreatmentDuration(conditionType);
+        
+        StringBuilder plan = new StringBuilder();
+        plan.append("Medication Treatment Plan:\n")
+            .append("Patient Life Stage: ").append(lifeStage).append(".\n")
+            .append("Doses per day: ").append(dosesPerDay).append(".\n")
+            .append("Duration: ").append(duration).append(" days.\n")
+            .append("Medication: ").append(medicationType).append(".");
 
-        return "Medication Treatment Plan: " +
-               "\nPatient Life Stage: " + lifeStage +
-               "\nDoses per day: " + dosesPerDay +
-               "\nDuration: " + duration + " days" +
-               "\nMedication: " + medicationType;
+        return plan.toString();
     }
-
+    
     // Determines the number of doses per day based on life stage (age group)
     private int getDosesPerDay(String lifeStage) {
         switch (lifeStage.toUpperCase()) {
