@@ -1,4 +1,9 @@
 CST8288 Assignment01:
+
+Carter Belnap
+041128249
+beln0004@algonquinlive.com
+
 Focused on applying UML and SOLID principles to existing code regarding patients and their treatment plans.
 
 There are seven main files to focus on;
